@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://smtpjs.com/v3/smtp.js">
+        
+    </script>
+    <script >
+        function sendMail()
+        { console.log('Appending...'); 
+            let userEmail = document.getElementById('userEmail').value;
+            let message="welcome to smtp server";
+            let body=message;
+
+            Email.send(
+                {
+                    SecureToken:'aohummcarbsocllv',
+                    To:userEmail,
+                    From:'igiramichael@gmail.com',
+                    Subject:'Teso Inc',
+                    Body:body
+                }
+            ).then(
+                message => 
+                {
+                    if(message=='ok'){
+                        alert('success');
+                    }
+                    else 
+                    {
+                        alert('error');
+                    }
+                }
+            );
+        }
+    </script>
+</head>
+<body>
+    <form >
+        <input type="email" name="" id="" placeholder="Enter your email">
+        <div id="result"></div>
+        <button onclick="sendMail()">Send Email</button>
+    </form>
+</body>
+</html>
